@@ -41,7 +41,7 @@ def main():
                     if img_file_buffer is not None: 
                         image = np.array(PIL.Image.open(img_file_buffer)) 
                         image = cv2.resize(image, (640, 640))
-                        model = torch.hub.load('ultralytics/yolov5', 'custom' ,path='model.pt')
+                        model = torch.hub.load('ultralytics/yolov5', 'custom' ,path='best1.pt')
                         model.conf = confidence_threshold
                         results=model(image)
                         st.image(results.render()[0])
